@@ -36,18 +36,6 @@ if __name__ == "__main__":
     builder.make_dirs(args)
     builder.setup_logger(args)
 
-    # if args.target.startswith("linux"):
-    #     arch = "arm64" if "arm" in args.target else "amd64"
-    #     builder.install_packages(args, [f"libssl-dev:{arch}=1.1.1*"])
-
-    # builder.install_ext(args, [
-    #     ("boost", args.boost_version),
-    # ])
-    # if args.target.startswith("android"):
-    #     builder.install_ext(args, [
-    #         ("openssl", args.openssl_version),
-    #     ])
-
     builder.fetch_source(
         args=args,
         source=f"https://github.com/nlohmann/json/archive/refs/tags/v{args.version}.tar.gz",
